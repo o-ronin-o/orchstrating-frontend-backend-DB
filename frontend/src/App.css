@@ -1,0 +1,110 @@
+
+
+
+/* frontend/src/App.css 
+
+    AI generated For debugging purposes
+
+*/
+
+/* ===== DRAMATIC TEST CHANGES - YOU'LL SEE THESE! ===== */
+
+/* 1. CHANGE: Background to RED */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #ffcccc; /* WAS: #f4f4f9 - NOW: Light Red */
+  margin: 0;
+  padding: 0;
+}
+
+/* 2. CHANGE: Container to YELLOW with THICK BORDER */
+div {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #ffffcc; /* WAS: #fff - NOW: Light Yellow */
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border: 5px solid #ff9900; /* NEW: Orange border */
+}
+
+/* 3. CHANGE: Heading to BLUE and BIGGER */
+h1 {
+  text-align: center;
+  color: #0066cc; /* WAS: #333 - NOW: Blue */
+  margin-bottom: 1.5rem;
+  font-size: 2.5rem; /* WAS: default - NOW: Larger */
+  text-decoration: underline; /* NEW: Underline */
+}
+
+/* 4. CHANGE: Inputs with PINK background */
+input {
+  display: block;
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 2px solid #ff66b2; /* WAS: #ccc - NOW: Pink */
+  border-radius: 6px;
+  font-size: 1rem;
+  background-color: #fff0f5; /* NEW: Light pink background */
+}
+
+/* 5. CHANGE: Buttons to PURPLE */
+button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  background-color: #9933cc; /* WAS: #4CAF50 - NOW: Purple */
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-right: 0.5rem;
+}
+
+button:hover {
+  background-color: #7a29a3; /* Darker purple */
+}
+
+/* 6. CHANGE: Status message to RED and BIG */
+p {
+  margin-top: 1rem;
+  font-weight: bold;
+  color: #ff0000; /* WAS: #007700 - NOW: Red */
+  font-size: 1.2rem; /* NEW: Larger */
+}
+
+/* 7. CHANGE: List items with GREEN background */
+li {
+  padding: 0.5rem;
+  border-bottom: 2px solid #00cc00; /* WAS: #eee - NOW: Green */
+  background-color: #e6ffe6; /* NEW: Light green background */
+  margin-bottom: 0.5rem;
+  border-radius: 4px;
+}
+
+/* 8. NEW: Add a blinking effect to the form */
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0.7; }
+  100% { opacity: 1; }
+}
+
+form {
+  animation: blink 2s infinite;
+}
+
+/* 9. NEW: Add a test banner */
+body::before {
+  content: "🚀 DOCKER TEST - HOT RELOAD ACTIVE 🚀";
+  display: block;
+  background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+  color: white;
+  text-align: center;
+  padding: 10px;
+  font-weight: bold;
+  font-size: 1.2rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}

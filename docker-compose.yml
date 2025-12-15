@@ -1,0 +1,51 @@
+version: "3.9"
+
+services:
+  db:
+    build: ./database
+    container_name: mydb
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - dbdata:/var/lib/mysql
+      - ./database/init.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - "8000:3306"
+    networks:                  
+      - app-network
+
+  backend:
+    build: ./backend
+    container_name: backend
+    depends_on:
+      - db
+    environment:
+      DB_HOST: db
+      DB_USER: root
+      DB_PASSWORD: root
+      DB_NAME: user_db
+    ports:
+      - "8001:3000"
+    volumes:
+      - ./downloads:/app/data
+    networks:                  
+      - app-network
+
+  frontend:
+    build: ./frontend
+    container_name: frontend
+    depends_on:
+      - backend
+    environment:
+      REACT_APP_API_URL: "http://localhost:8001"  
+      HOST: "0.0.0.0"         
+    ports:
+      - "8002:5173"
+    command: ["npm", "run", "dev", "--", "--host"]
+
+volumes:
+  dbdata:
+
+networks:                     
+  app-network:
+    driver: bridge
